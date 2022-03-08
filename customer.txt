@@ -1,0 +1,6 @@
+custid,fname,lname,location
+1000,raghul,ramesh,Chennai
+1001,Dinesh,kumar,Bangalore
+1002,Ganesh,G,Trichy
+1003,Kavita,Sekar,Hyderabad
+1004,Kishor,Ramachandra,Bangalore

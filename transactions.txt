@@ -1,0 +1,6 @@
+transid,custid,prodct,amount,location
+100,1000,laptop,210000,Chennai
+101,1000,mobile,120000,Chennai
+102,1003,tv,75000,Delhi
+103,1002,shirt,4000,Pune
+104,1003,toys,2000,Kolkatta
