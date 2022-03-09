@@ -1,0 +1,57 @@
+Metacharacters:
+
+. -> to match any single character except a newline char
+? -> matches the preceeding character either 0 times or 1 times presence
+	ex:
+		Ram? -> Ra, Ram 
+* -> matches the preceeding char either 0 or any number of times
+	ex:
+		Ram* -> Ra, Ram, Ramm, Rammm,Rammmm,Rammmmm,,,,,,
++ -> matches the preceeding char either 1 or any number of times
+	ex:
+		Ram+ ->  Ram, Ramm, Rammm,Rammmm,Rammmmm,,,,,,
+^ -> Match if the string is the begining of the line
+	 Ex:
+		Find a line that starts with VMware
+			^VMware
+$ -> Match if the string is the end of the line
+	Ex:
+		Find a line that ends with ;
+			;&
+[] -> any char present inside [] will get matched (character set)
+	ex:
+		[ram] -> r | a | m
+		[aeiou] -> a|e|i|o|u
+		[^aeiou] -> negote it (match the word which does not contains a|e|i|o|u)
+() -> Grouping
+	Ex:
+		(Ram)+ => Ram, RamRam,RamRamRam,....
+{m,n} -> matches if the preceeding character or a word is present min m times and max n times
+		Ex:
+			Ram{2,5}
+				Ramm, Rammm,Rammmm,Rammmmm
+			Ram{2,}
+				Ramm,Rammm,Rammmm,Rammmmm,,,,,
+			Ram{,3}
+				Ram,Ramm,Rammm
+			Ram{3}
+				Rammm
+			
+|  -> or conditions
+		Ex:
+			(success|failure)
+
+Matesequence:
+\d -> Matches any digits (0-9)
+\D -> Matches everything except a number
+\w -> word character (a-zA-Z0-9_)
+\W -> Matches everything except a word character
+\s -> to match the space character
+\S -> to match non space character
+\b -> word boundry
+	ex:
+		str="The main street is broad"
+		
+		/road/
+		\broad\b
+
