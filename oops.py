@@ -23,13 +23,13 @@ class Employee:
         return self.first_name+" "+self.last_name
     @classmethod
     def create_obj(cls,emp_info):
-        cls.hike_percent
+        #cls.hike_percent
         cls.emp_info=emp_info
         fn,ln,sl=cls.emp_info.split("-")
         return cls(fn,ln,int(sl))    # Employee("Shivani","Kolanchi",100000)
 
     def appraisal(self):
-        self.salary=int(self.salary*self.hike_percent)
+        self.salary=int(self.salary*1.5)
 
     @staticmethod
     def is_workingday(day):
@@ -68,8 +68,20 @@ emp_2=Employee.create_obj(str2)
 # print(emp_1.email)
 # print(emp_2.email)
 #
+class Company:
+    def __inti__(self,fname,lname,sal,name="VMware"):
+        self.company_name=name
+        self.fname=fname
+        self.lname=lname
+        self.salary=sal
 
-class Developer(Employee):
+    def appraisal(self):
+        self.salary= self.salary*3
+
+    def anotherclass(self):
+        print("PYTHON TECHNOLOGY!")
+
+class Developer(Employee,Company):
     # def __init__(self,fname,lname,pay,tech):
     #     self.technology = tech
     #     super().__init__(fname,lname,pay)
@@ -85,13 +97,23 @@ class Developer(Employee):
         else:
             print("Chennai")
 
-    def fullname(self):
-        return "{} {}".format(self.first_name.upper(), self.last_name.upper())
+    def fullname(self,title):
+        self.title=title
+        return "{} {} {}".format(self.title,self.first_name.upper(), self.last_name.upper())
 
-dev_1=Developer('Santosh','Krishan')
-dev_2=Developer('Yogitha','Krishan')
+    def appraisal(self):
+        #super(Employee,self).appraisal()
+        #Company.appraisal(self)
+        super().appraisal()
 
-print("{},{}".format(dev_1.email,dev_1.salary))
-print("{},{}".format(dev_2.email,dev_2.salary))
-#dev_1.officelocation("India","Karnataka")
-print(dev_1.fullname())
+dev_1=Developer('Santosh','Krishan',100000)
+dev_2=Developer('Yogitha','Krishan',120000)
+
+# print("{},{}".format(dev_1.email,dev_1.salary))
+# print("{},{}".format(dev_2.email,dev_2.salary))
+# #dev_1.officelocation("India","Karnataka")
+# print(dev_1.fullname("Mr"))
+# print(dev_2.fullname("Miss"))
+print(dev_1.salary)
+dev_1.appraisal()
+print(dev_1.salary)
