@@ -1,0 +1,3 @@
+import MyPackage
+
+firstprog.firstfunction()
