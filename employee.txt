@@ -1,0 +1,3 @@
+empid,fname,lname,tech
+1001,raghul,ramesh,python
+1002,levin,lenus,java
